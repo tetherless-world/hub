@@ -6,8 +6,8 @@
 export CSV2RDF4LOD_CONVERT_PERSON_URI="http://tw.rpi.edu/instances/TimLebo"
 source /home/lebot/prizms/hub/data/source/csv2rdf4lod-source-me-for-hub.sh
 alias hub='sudo su hub'
-export PATH=$PATH`/home/lebot/opt/prizms/bin/install/paths.sh`
-export CLASSPATH=$CLASSPATH`/home/lebot/opt/prizms/bin/install/classpaths.sh`
 export CSV2RDF4LOD_HOME="/home/lebot/opt/prizms/repos/csv2rdf4lod-automation"
 export DATAFAQS_HOME="/home/lebot/opt/prizms/repos/DataFAQs"
 export JENAROOT=/home/lebot/opt/apache-jena-2.10.0
+export PATH=$PATH`/home/lebot/opt/prizms/bin/install/paths.sh`
+export CLASSPATH=$CLASSPATH`/home/lebot/opt/prizms/bin/install/classpaths.sh`

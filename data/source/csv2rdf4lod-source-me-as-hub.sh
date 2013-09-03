@@ -9,11 +9,10 @@ source /home/hub/prizms/hub/data/source/csv2rdf4lod-source-me-credentials.sh
 export CSV2RDF4LOD_CONVERT_DATA_ROOT="/home/hub/prizms/hub/data/source"
 export CSV2RDF4LOD_PUBLISH_VARWWW_DUMP_FILES="true"
 export CSV2RDF4LOD_PUBLISH_VARWWW_ROOT="/var/www"
-export PATH=$PATH`/home/hub/opt/prizms/bin/install/paths.sh`
-export CLASSPATH=$CLASSPATH`/home/hub/opt/prizms/bin/install/classpaths.sh`
 export CSV2RDF4LOD_HOME="/home/hub/opt/prizms/repos/csv2rdf4lod-automation"
 export DATAFAQS_HOME="/home/hub/opt/prizms/repos/DataFAQs"
 export CSV2RDF4LOD_PUBLISH_VIRTUOSO="true"
 export CSV2RDF4LOD_PUBLISH_SUBSET_SAMPLES="true"
-export JENAROOT=
 export JENAROOT=/home/hub/opt/apache-jena-2.10.0
+export PATH=$PATH`/home/hub/opt/prizms/bin/install/paths.sh`
+export CLASSPATH=$CLASSPATH`/home/hub/opt/prizms/bin/install/classpaths.sh`
