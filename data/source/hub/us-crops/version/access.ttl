@@ -11,16 +11,16 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub";
    conversion:dataset_identifier "us-crops";
-   prov:wasDerivedFrom :download_4f25aba2-c001-4d5b-92a4-b3729cfda191;
+   prov:wasDerivedFrom :download_18102821-4100-4315-bd49-e6ffd4e788cc;
 .
 
-:download_4f25aba2-c001-4d5b-92a4-b3729cfda191
+:download_18102821-4100-4315-bd49-e6ffd4e788cc
    a dcat:Distribution;
    a nfo:Spreadsheet;
    dcat:downloadURL <https://docs.google.com/spreadsheet/ccc?key=0ApV67TM6Ml_wdGcxZXJKRzN4NkFheHIyZVhUSTE2dWc#gid=0>;
 .
 
-<dataset/4f25aba2-c001-4d5b-92a4-b3729cfda191>
+<dataset/18102821-4100-4315-bd49-e6ffd4e788cc>
    a dcat:Dataset;
-   dcat:distribution :download_4f25aba2-c001-4d5b-92a4-b3729cfda191;
+   dcat:distribution :download_18102821-4100-4315-bd49-e6ffd4e788cc;
 .

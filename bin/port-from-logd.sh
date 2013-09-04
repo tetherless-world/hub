@@ -29,7 +29,7 @@ function setup {
       perl -pi -e 's|http://logd.tw.rpi.edu/source/twc-rpi-edu|http://purl.org/twc/hub/source/hub|' $datasetID.csv.e1.params.ttl
       perl -pi -e 's|http://logd.tw.rpi.edu|http://purl.org/twc/hub|'                               $datasetID.csv.e1.params.ttl
       perl -pi -e 's|twc-rpi-edu|hub|'                                                              $datasetID.csv.e1.params.ttl
-      perl -pi -e 's|"instance-hub-||'                                                              $datasetID.csv.e1.params.ttl
+      perl -pi -e 's|"instance-hub-|"|'                                                             $datasetID.csv.e1.params.ttl
    popd                        &> /dev/null
 }
 

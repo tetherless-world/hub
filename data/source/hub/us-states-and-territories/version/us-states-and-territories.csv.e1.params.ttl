@@ -34,7 +34,7 @@
 
    conversion:base_uri           "http://purl.org/twc/hub"^^xsd:anyURI;
    conversion:source_identifier  "hub";
-   conversion:dataset_identifier us-states-and-territories";
+   conversion:dataset_identifier "us-states-and-territories";
    conversion:version_identifier "2011-Mar-31";
 
    conversion:conversion_process [

@@ -11,16 +11,16 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub";
    conversion:dataset_identifier "countries";
-   prov:wasDerivedFrom :download_022be0be-5059-4b7b-9382-8512577dbf67;
+   prov:wasDerivedFrom :download_edf8a36a-cc96-4196-ae01-9e27cbb2f347;
 .
 
-:download_022be0be-5059-4b7b-9382-8512577dbf67
+:download_edf8a36a-cc96-4196-ae01-9e27cbb2f347
    a dcat:Distribution;
    a nfo:Spreadsheet;
    dcat:downloadURL <https://docs.google.com/spreadsheet/ccc?key=0ArTeDpS4-nUDdGx1bm56R0xibkxmRmtiVUhhNG5yWXc#gid=0>;
 .
 
-<dataset/022be0be-5059-4b7b-9382-8512577dbf67>
+<dataset/edf8a36a-cc96-4196-ae01-9e27cbb2f347>
    a dcat:Dataset;
-   dcat:distribution :download_022be0be-5059-4b7b-9382-8512577dbf67;
+   dcat:distribution :download_edf8a36a-cc96-4196-ae01-9e27cbb2f347;
 .
