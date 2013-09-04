@@ -1,0 +1,125 @@
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix vann:       <http://purl.org/vocab/vann/> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:       <http://www.w3.org/2006/time#> .
+@prefix wgs:        <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:   <http://www.geonames.org/ontology#> .
+@prefix dbpedia:    <http://dbpedia.org/resource/> .
+@prefix con:        <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:        <http://purl.oclc.org/NET/muo/muo#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix dgtwc:      <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix scovo:      <http://purl.org/NET/scovo#> .
+@prefix sioc:       <http://rdfs.org/sioc/ns#> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix ov:         <http://open.vocab.org/terms/> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix :           <http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-fiscal-years/version/2011-Mar-31/params/enhancement/1/> .
+
+
+<http://tw.rpi.edu/instances/TimLebo> foaf:holdsAccount <http://tw.rpi.edu/web/inside/machine/sam#lebot> .
+<http://tw.rpi.edu/web/inside/machine/sam#lebot>
+   a foaf:OnlineAccount;
+   foaf:accountName "lebot";
+   dcterms:isPartOf <http://tw.rpi.edu/web/inside/machine/sam#>;
+   sioc:account_of  <http://tw.rpi.edu/instances/TimLebo>;
+.
+
+<http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-fiscal-years/version/2011-Mar-31/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset, dgtwc:InstanceHubDataset;
+
+   conversion:base_uri           "http://logd.tw.rpi.edu"^^xsd:anyURI;
+   conversion:source_identifier  "twc-rpi-edu";
+   conversion:dataset_identifier "instance-hub-fiscal-years";
+   conversion:version_identifier "2011-Mar-31";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+
+      dcterms:creator <http://tw.rpi.edu/web/inside/machine/sam#lebot>;
+      dcterms:created "2011-03-31T14:38:58-04:00"^^xsd:dateTime;
+
+      conversion:interpret [          
+         conversion:symbol "";
+         conversion:interpretation conversion:null; 
+      ];          
+      conversion:interpret [
+         conversion:symbol        "|";
+         conversion:interpretation conversion:repeat_previous;
+      ];
+      
+      conversion:enhance [
+         ov:csvCol          1;
+      conversion:domain_template "[/]id/fiscal-year/country/[#1]/purpose/[#2]/year/[#3]/FY_[#3]";
+      ];
+      
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "country";
+         conversion:bundled_by [ov:csvCol 7];
+         conversion:equivalent_property dcterms:title;
+         
+         #conversion:label   "country";
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+         a conversion:Repeat_previous_if_empty_column;
+           
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "purpose";
+         #conversion:label   "purpose";
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+         a conversion:Repeat_previous_if_empty_column;
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "year";
+         #conversion:label   "year";
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+         conversion:object_search [
+            conversion:regex     "^(.*)$";
+            conversion:predicate skos:broader;
+            conversion:object    "http://logd.tw.rpi.edu/instance-hub/financial/fiscal-year/FY_[\\1]";
+         ];
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "start month";
+         #conversion:label   "start month";
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "end month";
+         #conversion:label   "end month";
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          6;
+         ov:csvHeader       "see also";
+         #conversion:label   "see also";
+         conversion:comment "";
+         conversion:range   rdfs:Resource;
+         a conversion:Repeat_previous_if_empty_column;
+      ];
+      conversion:enhance [
+         ov:csvCol          7;
+         ov:csvHeader       "country dbpedia URI";
+         #conversion:label   "country dbpedia URI";
+         conversion:comment "";
+         conversion:range   rdfs:Resource;
+         a conversion:Repeat_previous_if_empty_column;
+      ];
+   ];
+.

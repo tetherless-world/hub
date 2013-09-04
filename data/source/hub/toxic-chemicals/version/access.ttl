@@ -1,0 +1,24 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
+@prefix :           <http://purl.org/twc/hub/id/> .
+
+<http://purl.org/twc/hub/source/hub/dataset/toxic-chemicals>
+   a void:Dataset, dcat:Dataset;
+   conversion:source_identifier  "hub";
+   conversion:dataset_identifier "toxic-chemicals";
+   prov:wasDerivedFrom :download_e147cfd1-ec2a-4e6d-a253-c21b9e3df715;
+.
+
+:download_e147cfd1-ec2a-4e6d-a253-c21b9e3df715
+   a dcat:Distribution;
+   dcat:downloadURL <https://docs.google.com/spreadsheet/ccc?key=0ApV67TM6Ml_wdE15SnlmLW9aSkRYemp0aElyd1pGb0E#gid=0>;
+.
+
+<dataset/e147cfd1-ec2a-4e6d-a253-c21b9e3df715>
+   a dcat:Dataset;
+   dcat:distribution :download_e147cfd1-ec2a-4e6d-a253-c21b9e3df715;
+.

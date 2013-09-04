@@ -1,0 +1,129 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#> .
+@prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix sioc:       <http://rdfs.org/sioc/ns#> .
+@prefix oboro:      <http://obofoundry.org/ro/ro.owl#> .
+@prefix oprov:      <http://openprovenance.org/ontology#> .
+@prefix hartigprov: <http://purl.org/net/provenance/ns#> .
+@prefix irw:        <http://www.ontologydesignpatterns.org/ont/web/irw.owl#> .
+@prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#> .
+@prefix conv:       <http://purl.org/twc/vocab/conversion/> .
+@prefix httphead:   <http://inference-web.org/registry/MPR/HTTP_1_1_HEAD.owl#> .
+@prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> .
+@prefix httppost:   <http://inference-web.org/registry/MPR/HTTP_1_1_POST.owl#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+
+
+<https://scm.escience.rpi.edu/svn/public/logd-csv2rdf4lod/data/source/twc-rpi-edu/instance-hub-us-counties/version/instance-hub-us-counties.csv.e1.params.ttl>
+   a pmlp:Source, prov:Entity;
+.
+
+<https://scm.escience.rpi.edu/svn/public/logd-csv2rdf4lod/data/source/twc-rpi-edu/instance-hub-us-counties/version/instance-hub-us-counties.csv.e1.params.ttl>
+   a pmlp:Source, prov:Entity;
+.
+
+<instance-hub-us-counties.csv.e1.params.ttl>
+   a nfo:FileDataObject, prov:Entity, pmlp:Information;
+   prov:wasQuotedFrom      <https://scm.escience.rpi.edu/svn/public/logd-csv2rdf4lod/data/source/twc-rpi-edu/instance-hub-us-counties/version/instance-hub-us-counties.csv.e1.params.ttl>;
+   prov:qualifiedQuotation <quotation_ac284903-0af8-48a6-8224-bb722dedbb23>;
+   pmlp:hasReferenceSourceUsage <sourceUsageac284903-0af8-48a6-8224-bb722dedbb23_content>;
+.
+<instance-hub-us-counties.csv.e1.params.ttl>
+   a nfo:FileDataObject;
+   nfo:fileName "instance-hub-us-counties.csv.e1.params.ttl";
+   nfo:hasHash <md5_54c586d9d3b40cd099a5ac769e41c673_time_1378253694>;
+.
+<md5_54c586d9d3b40cd099a5ac769e41c673_time_1378253694>
+   a nfo:FileHash; 
+   dcterms:date      "2013-09-04T00:14:54+00:00"^^xsd:dateTime;
+   nfo:hashAlgorithm "md5";
+   nfo:hashValue     "54c586d9d3b40cd099a5ac769e41c673";
+.
+
+<nodeSetac284903-0af8-48a6-8224-bb722dedbb23_content>
+   a pmlj:NodeSet;
+   pmlj:hasConclusion <instance-hub-us-counties.csv.e1.params.ttl>;
+   pmlj:isConsequentOf <inferenceStepac284903-0af8-48a6-8224-bb722dedbb23_content>;
+.
+<inferenceStepac284903-0af8-48a6-8224-bb722dedbb23_content>
+   a pmlj:InferenceStep;
+   pmlj:hasIndex 0;
+   pmlj:hasAntecedentList ();
+   pmlj:hasSourceUsage     <sourceUsageac284903-0af8-48a6-8224-bb722dedbb23_content>;
+   pmlj:hasInferenceEngine conv:curl_md5_95007d88b1609443f3a70e09a419ab00;
+   pmlj:hasInferenceRule   httpget:HTTP_1_1_GET;
+   oboro:has_agent          [ a foaf:OnlineAccount; foaf:accountName "lebot" ];
+   hartigprov:involvedActor [ a foaf:OnlineAccount; foaf:accountName "lebot" ];
+.
+
+<quotation_ac284903-0af8-48a6-8224-bb722dedbb23>
+   a prov:Quotation;
+   prov:entity <https://scm.escience.rpi.edu/svn/public/logd-csv2rdf4lod/data/source/twc-rpi-edu/instance-hub-us-counties/version/instance-hub-us-counties.csv.e1.params.ttl>;
+   prov:atTime "2013-09-04T00:14:53+00:00"^^xsd:dateTime;
+.
+
+<sourceUsageac284903-0af8-48a6-8224-bb722dedbb23_content>
+   a pmlp:SourceUsage;
+   pmlp:hasSource        <https://scm.escience.rpi.edu/svn/public/logd-csv2rdf4lod/data/source/twc-rpi-edu/instance-hub-us-counties/version/instance-hub-us-counties.csv.e1.params.ttl>;
+   pmlp:hasUsageDateTime "2013-09-04T00:14:53+00:00"^^xsd:dateTime;
+.
+
+<wasControlledByac284903-0af8-48a6-8224-bb722dedbb23_content>
+   a oprov:WasControlledBy;
+   oprov:cause  [ a foaf:OnlineAccount; foaf:accountName "lebot" ];
+   oprov:effect <inferenceStepac284903-0af8-48a6-8224-bb722dedbb23_content>;
+   oprov:endTime "2013-09-04T00:14:53+00:00"^^xsd:dateTime;
+.
+ 
+<infoac284903-0af8-48a6-8224-bb722dedbb23_url_header>
+   a pmlp:Information, conv:HTTPHeader;
+   pmlp:hasRawString """""";
+   pmlp:hasReferenceSourceUsage <sourceUsageac284903-0af8-48a6-8224-bb722dedbb23_url_header>;
+.
+ 
+<nodeSetac284903-0af8-48a6-8224-bb722dedbb23_url_header>
+   a pmlj:NodeSet;
+   pmlj:hasConclusion <infoac284903-0af8-48a6-8224-bb722dedbb23_url_header>;
+   pmlj:isConsequentOf <inferenceStepac284903-0af8-48a6-8224-bb722dedbb23_url_header>;
+.
+<inferenceStepac284903-0af8-48a6-8224-bb722dedbb23_url_header>
+   a pmlj:InferenceStep;
+   pmlj:hasIndex 0;
+   pmlj:hasAntecedentList ();
+   pmlj:hasSourceUsage     <sourceUsageac284903-0af8-48a6-8224-bb722dedbb23_url_header>;
+   pmlj:hasInferenceEngine conv:curl_md5_95007d88b1609443f3a70e09a419ab00;
+   pmlj:hasInferenceRule   httphead:HTTP_1_1_HEAD;
+   oboro:has_agent          [ a foaf:OnlineAccount; foaf:accountName "lebot" ];
+   hartigprov:involvedActor [ a foaf:OnlineAccount; foaf:accountName "lebot" ];
+.
+
+<sourceUsageac284903-0af8-48a6-8224-bb722dedbb23_url_header>
+   a pmlp:SourceUsage;
+   pmlp:hasSource        <https://scm.escience.rpi.edu/svn/public/logd-csv2rdf4lod/data/source/twc-rpi-edu/instance-hub-us-counties/version/instance-hub-us-counties.csv.e1.params.ttl>;
+   pmlp:hasUsageDateTime "2013-09-04T00:14:53+00:00"^^xsd:dateTime;
+.
+<wasControlledByac284903-0af8-48a6-8224-bb722dedbb23_url_header>
+   a oprov:WasControlledBy;
+   oprov:cause  [ a foaf:OnlineAccount; foaf:accountName "lebot" ];
+   oprov:effect <nodeSetac284903-0af8-48a6-8224-bb722dedbb23_url_header>;
+   oprov:endTime "2013-09-04T00:14:53+00:00"^^xsd:dateTime;
+.
+
+
+conv:curl_md5_95007d88b1609443f3a70e09a419ab00
+   a prov:Agent, pmlp:InferenceEngine, conv:Curl;
+   dcterms:identifier "md5_95007d88b1609443f3a70e09a419ab00";
+   dcterms:description """curl 7.19.7 (x86_64-pc-linux-gnu) libcurl/7.19.7 OpenSSL/0.9.8k zlib/1.2.3.3 libidn/1.15
+Protocols: tftp ftp telnet dict ldap ldaps http file https ftps 
+Features: GSS-Negotiate IDN IPv6 Largefile NTLM SSL libz """;
+.
+
+conv:Curl rdfs:subClassOf pmlp:InferenceEngine .

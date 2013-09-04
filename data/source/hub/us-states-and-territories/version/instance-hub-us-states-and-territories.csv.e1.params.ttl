@@ -1,0 +1,123 @@
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix vann:       <http://purl.org/vocab/vann/> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:       <http://www.w3.org/2006/time#> .
+@prefix wgs:        <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:   <http://www.geonames.org/ontology#> .
+@prefix dbpedia:    <http://dbpedia.org/resource/> .
+@prefix con:        <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:        <http://purl.oclc.org/NET/muo/muo#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix scovo:      <http://purl.org/NET/scovo#> .
+@prefix sioc:       <http://rdfs.org/sioc/ns#> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix dgtwc:      <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix ov:         <http://open.vocab.org/terms/> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix :           <http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-us-states-and-territories/version/2011-Mar-31/params/enhancement/1/> .
+
+<http://tw.rpi.edu/instances/TimLebo> foaf:holdsAccount <http://tw.rpi.edu/web/inside/machine/sam#lebot> .
+<http://tw.rpi.edu/web/inside/machine/sam#lebot>
+   a foaf:OnlineAccount;
+   foaf:accountName "lebot";
+   dcterms:isPartOf <http://tw.rpi.edu/web/inside/machine/sam#>;
+   sioc:account_of  <http://tw.rpi.edu/instances/TimLebo>;
+.
+
+<http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-us-states-and-territories/version/2011-Mar-31/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset, dgtwc:InstanceHubDataset;
+
+   conversion:base_uri           "http://logd.tw.rpi.edu"^^xsd:anyURI;
+   conversion:source_identifier  "twc-rpi-edu";
+   conversion:dataset_identifier "instance-hub-us-states-and-territories";
+   conversion:version_identifier "2011-Mar-31";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+
+      dcterms:creator <http://tw.rpi.edu/web/inside/machine/sam#lebot>;
+      dcterms:created "2011-03-31T15:46:26-04:00"^^xsd:dateTime;
+
+      #conversion:interpret [          
+      #   conversion:symbol "";
+      #   conversion:interpretation conversion:null; 
+      #];                            
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "";
+         a conversion:Only_if_column;
+         conversion:domain_template "[/]id/us/state/[.]";
+         #conversion:label   "";
+         conversion:comment "";
+         conversion:equivalent_property dcterms:title;
+         conversion:subproperty_of dcterms:identifier;
+         conversion:range   rdfs:Literal;
+         
+         conversion:interpret [
+           conversion:symbol         "none","name";
+           conversion:interpretation conversion:null;
+         ]
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "";
+         #conversion:label   "";
+         conversion:comment "";
+         conversion:equivalent_property owl:sameAs;
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "";
+         conversion:equivalent_property dcterms:identifier;
+         conversion:label   "Abbreviation";
+         conversion:comment "";
+         conversion:subproperty_of dcterms:identifier;
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "";
+         conversion:label   "FIPS";
+         conversion:comment "";
+         conversion:subproperty_of dcterms:identifier;
+         conversion:range   todo:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "";
+         conversion:equivalent_property dcterms:identifier;
+         #conversion:label   "";
+         conversion:comment "";
+         conversion:subproperty_of dcterms:identifier;
+         conversion:range   rdfs:Literal;
+         conversion:interpret [
+           conversion:symbol         "";
+           conversion:interpretation conversion:null;
+         ]
+      ];
+      conversion:enhance [
+         ov:csvCol          6,7,8;
+         conversion:equivalent_property dcterms:identifier;
+         conversion:interpret [
+           conversion:symbol         "";
+           conversion:interpretation conversion:null;
+         ]
+      ];
+      conversion:enhance [
+         ov:csvCol          9;
+         ov:csvHeader       "";
+         conversion:equivalent_property rdf:type;
+         #conversion:label   "";
+         conversion:comment "";
+         conversion:range_template "[/sd]vocab/[.]";
+         conversion:range   rdfs:Resource;
+      ];
+   ];
+.

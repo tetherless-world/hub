@@ -1,0 +1,139 @@
+@prefix rdf:        <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix todo:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:        <http://www.w3.org/2002/07/owl#> .
+@prefix vann:       <http://purl.org/vocab/vann/> .
+@prefix skos:       <http://www.w3.org/2004/02/skos/core#> .
+@prefix time:       <http://www.w3.org/2006/time#> .
+@prefix wgs:        <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix geonames:   <http://www.geonames.org/ontology#> .
+@prefix dbpedia:    <http://dbpedia.org/resource/> .
+@prefix con:        <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix muo:        <http://purl.oclc.org/NET/muo/muo#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix scovo:      <http://purl.org/NET/scovo#> .
+@prefix sioc:       <http://rdfs.org/sioc/ns#> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix dgtwc:      <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
+@prefix ov:         <http://open.vocab.org/terms/> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix :           <http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-us-federal-agencies/version/2011-Mar-31/params/enhancement/1/> .
+
+<http://tw.rpi.edu/web/inside/machine/sam#xianli>
+   a foaf:OnlineAccount;
+   foaf:accountName "xianli";
+   dcterms:isPartOf <http://tw.rpi.edu/web/inside/machine/sam#>;
+.
+
+<http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-us-federal-agencies/version/2011-Mar-31/conversion/enhancement/1>
+   a conversion:LayerDataset, void:Dataset, dgtwc:InstanceHubDataset;
+
+   conversion:base_uri           "http://logd.tw.rpi.edu"^^xsd:anyURI;
+   conversion:source_identifier  "twc-rpi-edu";
+   conversion:dataset_identifier "instance-hub-us-federal-agencies";
+   conversion:version_identifier "2011-Mar-31";
+
+   conversion:conversion_process [
+      a conversion:EnhancementConversionProcess;
+      conversion:enhancement_identifier "1";
+
+      dcterms:creator <http://tw.rpi.edu/web/inside/machine/sam#xianli>;
+      dcterms:created "2011-03-31T15:18:25-04:00"^^xsd:dateTime;
+
+      conversion:enhance [      
+         ov:csvRow 1;
+         a conversion:HeaderRow;
+      ];                        
+      conversion:interpret [          
+         conversion:symbol "";
+         conversion:interpretation conversion:null; 
+      ];                            
+      conversion:enhance [
+         ov:csvCol          1;
+         ov:csvHeader       "agency";
+         conversion:domain_template "[/]id/us/fed/agency/[#2/][.]";
+         conversion:domain_name "US Agency";
+         conversion:equivalent_property dcterms:title;
+         conversion:comment "";
+         conversion:range   rdfs:Literal;
+         conversion:object_search [ # NOTE: This violates Linked Data 303 principles, but is needed to Drupal "knows" it should create a page for it.
+            conversion:regex     "^(.*)$";
+            conversion:predicate foaf:isPrimaryTopicOf;
+            conversion:object    "[/]id/us/fed/agency_page/[#2/][.]";
+         ];
+      ];
+      conversion:enhance [
+         a conversion:SubjectAnnotation;
+         conversion:predicate skos:inScheme;
+         conversion:object "TWC Instance Hub";
+      ];
+      conversion:enhance [
+         conversion:class_name  "US Agency";
+         conversion:subclass_of foaf:Organization;
+      ];
+      conversion:enhance [
+         ov:csvCol          2;
+         ov:csvHeader       "Largest Parent Agency";
+         #a conversion:Only_if_column;
+         conversion:equivalent_property skos:broader;
+         conversion:interpret [
+           conversion:symbol         "none", "Not Applicable";
+           conversion:interpretation conversion:null;
+         ];
+	 #conversion:domain_template "[/]id/us/fed/agency/[.]";  #[#2]";
+
+         conversion:range_template "[/]id/us/fed/agency/[.]";  #[#2]";
+
+         conversion:range   rdfs:Resource;
+         conversion:range_name "US Agency";
+
+         conversion:predicate skos:inScheme;
+         conversion:object "TWC Instance Hub";
+      ];
+      conversion:enhance [
+         ov:csvCol          3;
+         ov:csvHeader       "Intermediate Parent Agency";
+      ];
+      conversion:enhance [
+         ov:csvCol          4;
+         ov:csvHeader       "homepage";
+         conversion:comment "";
+         conversion:equivalent_property foaf:homepage;
+         conversion:range   rdfs:Resource;
+        #conversion:range_template "http://[.]"; # WHY was this commented out? -lebot
+      ];
+      conversion:enhance [
+         ov:csvCol          5;
+         ov:csvHeader       "alt homepage from dbpedia";
+         conversion:equivalent_property foaf:page;
+         conversion:comment "";
+         conversion:range   rdfs:Resource;
+         conversion:range_template "http://[.]";
+      ];
+      conversion:enhance [
+         ov:csvCol          6;
+         ov:csvHeader       "dbpedia_uri";
+         conversion:equivalent_property owl:sameAs;
+         conversion:comment "";
+         conversion:range   rdfs:Resource;
+      ];
+      conversion:enhance [
+         ov:csvCol          7;
+         ov:csvHeader       "abbreviation";
+         conversion:equivalent_property foaf:nick;
+         conversion:comment "";
+         conversion:delimits_object ";\\s*";
+         conversion:range   rdfs:Literal;
+      ];
+      conversion:enhance [
+         ov:csvCol          8;
+         ov:csvHeader       "alt labels";
+         conversion:equivalent_property dcterms:alternative;
+         conversion:subproperty_of         skos:altLabel;
+         conversion:comment "";
+         conversion:range   rdfs:Literal; 
+      ];
+   ];
+.

@@ -1,0 +1,24 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix conversion: <http://purl.org/twc/vocab/conversion/> .
+@prefix dcat:       <http://www.w3.org/ns/dcat#> .
+@prefix void:       <http://rdfs.org/ns/void#> .
+@prefix prov:       <http://www.w3.org/ns/prov#> .
+@prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
+@prefix :           <http://purl.org/twc/hub/id/> .
+
+<http://purl.org/twc/hub/source/hub/dataset/fiscal-years>
+   a void:Dataset, dcat:Dataset;
+   conversion:source_identifier  "hub";
+   conversion:dataset_identifier "fiscal-years";
+   prov:wasDerivedFrom :download_15f17455-0580-41b2-966c-8c6fa7f26421;
+.
+
+:download_15f17455-0580-41b2-966c-8c6fa7f26421
+   a dcat:Distribution;
+   dcat:downloadURL <https://docs.google.com/spreadsheet/ccc?key=0Al9lLCZTXJQ2dGxLd1dTNkdGNUxQWlY2OW1fazAyWkE#gid=0>;
+.
+
+<dataset/15f17455-0580-41b2-966c-8c6fa7f26421>
+   a dcat:Dataset;
+   dcat:distribution :download_15f17455-0580-41b2-966c-8c6fa7f26421;
+.
