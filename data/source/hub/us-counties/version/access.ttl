@@ -11,16 +11,16 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub";
    conversion:dataset_identifier "us-counties";
-   prov:wasDerivedFrom :download_b0b35cdc-14fb-4785-9d0b-4ad16b9abe88;
+   prov:wasDerivedFrom :download_e88dde86-b764-4650-9ed4-1aa6d7d63124;
 .
 
-:download_b0b35cdc-14fb-4785-9d0b-4ad16b9abe88
+:download_e88dde86-b764-4650-9ed4-1aa6d7d63124
    a dcat:Distribution;
    a nfo:Spreadsheet;
    dcat:downloadURL <https://docs.google.com/spreadsheet/ccc?key=0AnUrf7VMa9MadFpvSy1WVW5FNTJXcjc1emNDeXVyRVE#gid=0>;
 .
 
-<dataset/b0b35cdc-14fb-4785-9d0b-4ad16b9abe88>
+<dataset/e88dde86-b764-4650-9ed4-1aa6d7d63124>
    a dcat:Dataset;
-   dcat:distribution :download_b0b35cdc-14fb-4785-9d0b-4ad16b9abe88;
+   dcat:distribution :download_e88dde86-b764-4650-9ed4-1aa6d7d63124;
 .

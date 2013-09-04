@@ -19,7 +19,7 @@
 @prefix dgtwc:      <http://data-gov.tw.rpi.edu/2009/data-gov-twc.rdf#> .
 @prefix ov:         <http://open.vocab.org/terms/> .
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
-@prefix :           <http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-us-states-and-territories/version/2011-Mar-31/params/enhancement/1/> .
+@prefix :           <http://purl.org/twc/hub/source/hub/dataset/instance-hub-us-states-and-territories/version/2011-Mar-31/params/enhancement/1/> .
 
 <http://tw.rpi.edu/instances/TimLebo> foaf:holdsAccount <http://tw.rpi.edu/web/inside/machine/sam#lebot> .
 <http://tw.rpi.edu/web/inside/machine/sam#lebot>
@@ -29,12 +29,12 @@
    sioc:account_of  <http://tw.rpi.edu/instances/TimLebo>;
 .
 
-<http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-us-states-and-territories/version/2011-Mar-31/conversion/enhancement/1>
+<http://purl.org/twc/hub/source/hub/dataset/instance-hub-us-states-and-territories/version/2011-Mar-31/conversion/enhancement/1>
    a conversion:LayerDataset, void:Dataset, dgtwc:InstanceHubDataset;
 
-   conversion:base_uri           "http://logd.tw.rpi.edu"^^xsd:anyURI;
-   conversion:source_identifier  "twc-rpi-edu";
-   conversion:dataset_identifier "instance-hub-us-states-and-territories";
+   conversion:base_uri           "http://purl.org/twc/hub"^^xsd:anyURI;
+   conversion:source_identifier  "hub";
+   conversion:dataset_identifier us-states-and-territories";
    conversion:version_identifier "2011-Mar-31";
 
    conversion:conversion_process [

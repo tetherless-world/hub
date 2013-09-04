@@ -28,7 +28,7 @@
 @prefix foaf:          <http://xmlns.com/foaf/0.1/> .
 @prefix ov:            <http://open.vocab.org/terms/> .
 @prefix conversion:    <http://purl.org/twc/vocab/conversion/> .
-@prefix :              <http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-countries/version/2012-May-02/params/enhancement/1/> .
+@prefix :              <http://purl.org/twc/hub/source/hub/dataset/instance-hub-countries/version/2012-May-02/params/enhancement/1/> .
 
 <http://tw.rpi.edu/web/inside/machine/gemini#root>
    a foaf:OnlineAccount;
@@ -42,12 +42,12 @@
 #   #conversion:type_name     "My Class";   # Can also be a URI, e.g. foaf:Person.
 #.
 
-<http://logd.tw.rpi.edu/source/twc-rpi-edu/dataset/instance-hub-countries/version/2012-May-02/conversion/enhancement/1>
+<http://purl.org/twc/hub/source/hub/dataset/instance-hub-countries/version/2012-May-02/conversion/enhancement/1>
    a conversion:LayerDataset, void:Dataset, conversion:MetaDataset;
 
-   conversion:base_uri           "http://logd.tw.rpi.edu"^^xsd:anyURI;
-   conversion:source_identifier  "twc-rpi-edu";
-   conversion:dataset_identifier "instance-hub-countries";
+   conversion:base_uri           "http://purl.org/twc/hub"^^xsd:anyURI;
+   conversion:source_identifier  "hub";
+   conversion:dataset_identifier countries";
    conversion:version_identifier "2012-May-02";
    conversion:enhancement_identifier "1";
 
