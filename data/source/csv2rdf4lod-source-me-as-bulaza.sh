@@ -6,8 +6,8 @@
 export CSV2RDF4LOD_CONVERT_PERSON_URI="http://tw.rpi.edu/instances/AlexeiBulazel"
 source /home/bulaza/prizms/hub/data/source/csv2rdf4lod-source-me-for-hub.sh
 alias hub='sudo su hub'
-export PATH=$PATH`/home/bulaza/opt/prizms/bin/install/paths.sh`
-export CLASSPATH=$CLASSPATH`/home/bulaza/opt/prizms/bin/install/classpaths.sh`
 export CSV2RDF4LOD_HOME="/home/bulaza/opt/prizms/repos/csv2rdf4lod-automation"
 export DATAFAQS_HOME="/home/bulaza/opt/prizms/repos/DataFAQs"
 export JENAROOT=/home/bulaza/opt/apache-jena-2.10.0
+export PATH=$PATH`/home/bulaza/opt/prizms/bin/install/paths.sh`
+export CLASSPATH=$CLASSPATH`/home/bulaza/opt/prizms/bin/install/classpaths.sh`
