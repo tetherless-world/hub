@@ -2,6 +2,7 @@
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
+@prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/hub/id/> .
@@ -10,15 +11,16 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub";
    conversion:dataset_identifier "us-states-and-territories";
-   prov:wasDerivedFrom :download_027e0ae8-3d45-4f6b-8da0-739d21a687de;
+   prov:wasDerivedFrom :download_3d301daa-20cc-497b-a42a-909e5fc712d6;
 .
 
-:download_027e0ae8-3d45-4f6b-8da0-739d21a687de
+:download_3d301daa-20cc-497b-a42a-909e5fc712d6
    a dcat:Distribution;
+   a nfo:Spreadsheet;
    dcat:downloadURL <https://docs.google.com/spreadsheet/ccc?key=t9QH44S-_D6-4FQPOCM81BA#gid=0>;
 .
 
-<dataset/027e0ae8-3d45-4f6b-8da0-739d21a687de>
+<dataset/3d301daa-20cc-497b-a42a-909e5fc712d6>
    a dcat:Dataset;
-   dcat:distribution :download_027e0ae8-3d45-4f6b-8da0-739d21a687de;
+   dcat:distribution :download_3d301daa-20cc-497b-a42a-909e5fc712d6;
 .

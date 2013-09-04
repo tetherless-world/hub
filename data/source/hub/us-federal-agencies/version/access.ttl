@@ -2,6 +2,7 @@
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
+@prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/hub/id/> .
@@ -10,15 +11,16 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub";
    conversion:dataset_identifier "us-federal-agencies";
-   prov:wasDerivedFrom :download_9c3da49c-3669-4edd-8ba4-1fa216717ba3;
+   prov:wasDerivedFrom :download_32ef4343-7b5b-4804-a7b3-4208b81fc675;
 .
 
-:download_9c3da49c-3669-4edd-8ba4-1fa216717ba3
+:download_32ef4343-7b5b-4804-a7b3-4208b81fc675
    a dcat:Distribution;
+   a nfo:Spreadsheet;
    dcat:downloadURL <https://docs.google.com/spreadsheet/ccc?key=tejNArOGrsY_mV1VeZhYCYg#gid=0>;
 .
 
-<dataset/9c3da49c-3669-4edd-8ba4-1fa216717ba3>
+<dataset/32ef4343-7b5b-4804-a7b3-4208b81fc675>
    a dcat:Dataset;
-   dcat:distribution :download_9c3da49c-3669-4edd-8ba4-1fa216717ba3;
+   dcat:distribution :download_32ef4343-7b5b-4804-a7b3-4208b81fc675;
 .

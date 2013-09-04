@@ -23,7 +23,8 @@ function setup {
 
    mkdir -p $datasetID/version &> /dev/null
    pushd $datasetID/version    &> /dev/null
-      pcurl.sh $eparams
+      rm $datasetID.csv.e1.params.ttl
+      pcurl.sh $eparams -n $datasetID -e csv.e1.params.ttl
       cr-dcat-retrieval-url.sh "$gdoc"
    popd                        &> /dev/null
 }

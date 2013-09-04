@@ -2,6 +2,7 @@
 @prefix conversion: <http://purl.org/twc/vocab/conversion/> .
 @prefix dcat:       <http://www.w3.org/ns/dcat#> .
 @prefix void:       <http://rdfs.org/ns/void#> .
+@prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#> .
 @prefix prov:       <http://www.w3.org/ns/prov#> .
 @prefix datafaqs:   <http://purl.org/twc/vocab/datafaqs#> .
 @prefix :           <http://purl.org/twc/hub/id/> .
@@ -10,15 +11,16 @@
    a void:Dataset, dcat:Dataset;
    conversion:source_identifier  "hub";
    conversion:dataset_identifier "us-counties";
-   prov:wasDerivedFrom :download_a5abdd2a-86af-419c-a5e4-339fcafe2217;
+   prov:wasDerivedFrom :download_b0b35cdc-14fb-4785-9d0b-4ad16b9abe88;
 .
 
-:download_a5abdd2a-86af-419c-a5e4-339fcafe2217
+:download_b0b35cdc-14fb-4785-9d0b-4ad16b9abe88
    a dcat:Distribution;
+   a nfo:Spreadsheet;
    dcat:downloadURL <https://docs.google.com/spreadsheet/ccc?key=0AnUrf7VMa9MadFpvSy1WVW5FNTJXcjc1emNDeXVyRVE#gid=0>;
 .
 
-<dataset/a5abdd2a-86af-419c-a5e4-339fcafe2217>
+<dataset/b0b35cdc-14fb-4785-9d0b-4ad16b9abe88>
    a dcat:Dataset;
-   dcat:distribution :download_a5abdd2a-86af-419c-a5e4-339fcafe2217;
+   dcat:distribution :download_b0b35cdc-14fb-4785-9d0b-4ad16b9abe88;
 .

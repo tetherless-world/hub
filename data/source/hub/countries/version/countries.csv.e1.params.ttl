@@ -63,10 +63,11 @@
       #conversion:delimits_cell "|";   # pipe
       #conversion:delimits_cell ",";   # comma
 
-      #conversion:interpret [
-      #   conversion:symbol        "";
-      #   conversion:interpretation conversion:null; 
-      #];
+      conversion:interpret [
+         conversion:symbol        "";
+         conversion:interpretation conversion:null; 
+      ];
+      
       #conversion:enhance [
       #   conversion:domain_template "thing_[r]";
       #   conversion:domain_name     "Thing";
@@ -102,10 +103,10 @@
             conversion:regex     "^(.*)$";
             conversion:predicate foaf:isPrimaryTopicOf;
             conversion:object    "[/]id/country_page/[.]";
-         ];
+        ];
 
          conversion:interpret [
-           conversion:regex         "^ ";
+           conversion:regex         "^ *";
            conversion:interpretation "";
          ];
 	 
@@ -138,6 +139,7 @@
          conversion:comment "";
          conversion:range   rdfs:Literal;
 	 conversion:delimits_object "; ";
+         conversion:equivalent_property skos:altLabel;
       ];
       #conversion:enhance [            
       #   ov:csvRow 3,4,5;             
